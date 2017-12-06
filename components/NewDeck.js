@@ -9,6 +9,13 @@ class NewDeck extends Component {
     input: '',
   }
 
+  navigateToDeck = (new_deck) => {
+      this.props.navigation.navigate(
+        'IndividualDeck',
+        { deck: new_deck }
+      )
+  }
+
   handleTextChange = (input) => {
     this.setState(() => ({
       input
@@ -17,6 +24,7 @@ class NewDeck extends Component {
 
   handleSubmit = () => {
     this.props.dispatch(addDeck(this.state.input))
+    this.navigateToDeck(this.state.input)
   }
 
   render() {
@@ -65,7 +73,7 @@ const styles = StyleSheet.create({
   }
 })
 
-function mapStateToProps(state) {
+function mapStateToProps(state, { navigation }) {
 	return {}
 }
 

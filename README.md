@@ -1,5 +1,9 @@
 # FLASH-CARDS
 
+## installation
+
+`$ yarn install`
+
 ## build
 
 `$ yarn start`
